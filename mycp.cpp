@@ -3,13 +3,12 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
- 	ifstream fin;
- 	ofstream fout;
+int main(int argc, char const *argv[]) {
+  ifstream fin;
+  ofstream fout;
 
-	// check if there are enough arguments
-	if (argc == 3) {
+  // check if there are enough arguments
+  if (argc == 3) {
     string inFile = argv[1];
     string outFile = argv[2];
 
@@ -17,8 +16,8 @@ int main(int argc, char const *argv[])
     fin.open(inFile);
     char c;
 
-    if (fin.fail()) // check if it is successful
-    {
+    // check if it is successful
+    if (fin.fail()) {
       cerr << " Cannot open the input file!" << endl;
       return 1;
     }
@@ -27,14 +26,12 @@ int main(int argc, char const *argv[])
     // open the second file
     fout.open(outFile);
 
-    if (fout.fail())
-    {
+    if (fout.fail()) {
       cerr << " Cannot open the output file!" << endl;
       return 1;
     }
 
-    while(fin.get(c))
-    {
+    while(fin.get(c)) {
       fout << c;
     }
 
